@@ -1,6 +1,5 @@
 from Value import Value
 from NumericalOperations import NumericalOperations
-import re
 
 class SimplexMethodTool:
     def __init__(self, stringTable):
@@ -38,7 +37,6 @@ class SimplexMethodTool:
         
         max_row_name_length = max(len(name) for name in self.rowNames)
 
-        # Obtener la longitud máxima de cada columna
         col_widths = [max(len(repr(val)) for val in column) for column in zip(self.columnNames, *stringValues)]
 
         print(f"{'  ' * (max_row_name_length + 1)}{' | '.join(f'{name:<{col_widths[i]}}' for i, name in enumerate(self.columnNames))}")
@@ -117,9 +115,8 @@ class SimplexMethodTool:
                 operation = input()
                 if operation == '\n':
                     continue
-                if len(operation) == 0:
+                if operation == "end":
                     return
-                
                 self.matrixOperation(operation)
             except:
                 continue
