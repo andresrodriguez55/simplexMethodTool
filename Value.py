@@ -13,7 +13,6 @@ class Value:
         return result
 
     def simplify(self):
-        numericalOperations = NumericalOperations()
-        gcd = numericalOperations.gcd(self.numerator, self.denominator)
+        gcd = NumericalOperations().gcd(self.numerator, self.denominator)
         self.numerator //= gcd
         self.denominator //= gcd

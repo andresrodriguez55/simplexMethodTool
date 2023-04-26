@@ -1,16 +1,10 @@
 from SimplexMethodTool import SimplexMethodTool
 
-text = """
-    x1  x2  x3  R1  R2  x4  Solution
-z   -4  -1  0   -100 -100 0 0
-R1 3 1 0 1 0 0 3
-R2 4 3 -1 0 1 0 6
-x4 1 2 0 0 0 1 4
+table = """
+    x1  x2  x3 x4  Solution
+z  -4 -1 0 0 0
+x1  1 0 1/5 0 3/5
+x2  0 1 -3/5 0 6/5
+x4  0 0 1 1 1
 """ 
-simplex = SimplexMethodTool(text)
-
-"""
-Operations
-    rename {rowName} {columnName}
-    A{rowNumber} = {{, -}numerator/denominator}*A{rowNumber} {+, -} {{, -}numerator/denominator}*A{rowNumber} {+, -} ...
-"""
+simplex = SimplexMethodTool(table)

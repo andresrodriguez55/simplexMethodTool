@@ -80,7 +80,6 @@ class SimplexMethodTool:
         
         return [Value(val.numerator * numerator, val.denominator * denominator) for val in array]
 
-    # plus, mul, rest
     def matrixOperation(self, string):
         operation = string.split()
         if operation[0] == "rename":
@@ -116,6 +115,8 @@ class SimplexMethodTool:
             try:
                 self.__printTable()
                 operation = input()
+                if operation == '\n':
+                    continue
                 if len(operation) == 0:
                     return
                 
