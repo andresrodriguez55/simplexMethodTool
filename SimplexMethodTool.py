@@ -12,13 +12,17 @@ class SimplexMethodTool:
     def __initializeTable(self):
         lines = self.stringTable.strip().split("\n")
         
-        self.columnNames = lines[0].split()
+        self.columnNames = lines[0].replace('|', ' ').split()
         self.rowNames = []
         self.valueTable = []
-   
+
+        toIterate = lines[1:]
+        if "-+" in toIterate[0]:
+            toIterate = toIterate[1:]
+
         for line in lines[1:]:
             lineValues = line.split()
-            self.rowNames.append(lineValues[0].split("\t")[0])
+            self.rowNames.append(lineValues[0].replace('|', ' ').split("\t")[0])
             row = []
             for col in lineValues[1:]:
                 values = col.split("\t")[0].split('/')
