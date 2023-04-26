@@ -1,5 +1,4 @@
-"""
-Set the table from main!
+**Set the table from main!**
 
 # Operations
 - rename {rowName} {columnName}
