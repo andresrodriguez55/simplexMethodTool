@@ -1,4 +1,4 @@
-**Set the table from main!**
+**Set the table from main! Formatted / Not formated table acepted**
 
 # Operations
 - rename {rowName} {columnName}
